@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuhas Abesinpathirana | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <title>Anuhas Abesinpathirana | Premium Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -15,22 +15,76 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            color: #ffffff;
             line-height: 1.6;
             scroll-behavior: smooth;
+            min-height: 100vh;
+        }
+
+        /* Premium Background Image with Overlay */
+        .bg-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 10, 30, 0.85), rgba(30, 20, 50, 0.9));
+        }
+
+        /* Animated particles effect */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(96, 165, 250, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
         }
 
+        /* Glassmorphism Header */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            background: rgba(15, 25, 45, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(96, 165, 250, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -42,64 +96,105 @@
             align-items: center;
             padding: 20px 0;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 20px;
         }
 
         .logo {
-            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #60a5fa, #a855f7);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 15px rgba(96, 165, 250, 0.3);
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: linear-gradient(135deg, #ffffff, #60a5fa);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
+        .logo-text p {
+            font-size: 0.7rem;
+            color: #94a3b8;
+        }
+
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #334155;
+            color: #cbd5e1;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: all 0.3s;
+            position: relative;
         }
 
         .nav-links a:hover {
-            color: #2563eb;
+            color: #60a5fa;
         }
 
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #60a5fa, #a855f7);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Buttons */
         .btn {
             display: inline-block;
-            padding: 10px 24px;
+            padding: 12px 28px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.2s;
+            transition: all 0.3s;
         }
 
         .btn-primary {
-            background-color: #2563eb;
+            background: linear-gradient(135deg, #60a5fa, #a855f7);
             color: white;
-            border: 1px solid #2563eb;
+            border: none;
+            box-shadow: 0 5px 15px rgba(96, 165, 250, 0.3);
         }
 
         .btn-primary:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.4);
         }
 
         .btn-outline {
-            background-color: transparent;
-            color: #334155;
-            border: 1px solid #cbd5e1;
+            background: transparent;
+            color: #cbd5e1;
+            border: 1px solid #60a5fa;
         }
 
         .btn-outline:hover {
-            border-color: #2563eb;
-            color: #2563eb;
+            background: rgba(96, 165, 250, 0.1);
+            transform: translateY(-3px);
         }
 
         section {
@@ -107,21 +202,25 @@
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 48px;
             text-align: center;
-            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff, #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
+        /* Hero Section */
         .hero {
-            padding: 60px 0 80px;
+            padding: 100px 0 80px;
         }
 
         .hero-grid {
             display: flex;
             align-items: center;
-            gap: 48px;
+            gap: 60px;
             flex-wrap: wrap;
         }
 
@@ -130,56 +229,69 @@
         }
 
         .hero-content h1 {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 16px;
         }
 
         .highlight {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            background: linear-gradient(135deg, #60a5fa, #a855f7);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
         .hero-tagline {
-            font-size: 1.25rem;
-            color: #475569;
+            font-size: 1.3rem;
+            color: #cbd5e1;
             margin-bottom: 24px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 16px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .hero-photo {
-            flex: 0.6;
+            flex: 0.5;
             text-align: center;
         }
 
         .hero-photo img {
-            width: 280px;
-            height: 280px;
+            width: 320px;
+            height: 320px;
             object-fit: cover;
             border-radius: 50%;
-            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
-            border: 4px solid white;
+            border: 4px solid rgba(96, 165, 250, 0.5);
+            box-shadow: 0 30px 40px -20px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
         }
 
-        .about-card, .contact-card {
-            background: white;
-            border-radius: 24px;
+        .hero-photo img:hover {
+            transform: scale(1.02);
+            border-color: #60a5fa;
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 28px;
             padding: 32px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            transition: all 0.3s;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(96, 165, 250, 0.5);
+            transform: translateY(-5px);
         }
 
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
             margin-top: 24px;
         }
 
@@ -191,159 +303,236 @@
         }
 
         .info-item i {
-            width: 24px;
-            color: #2563eb;
+            width: 32px;
+            height: 32px;
+            background: rgba(96, 165, 250, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #60a5fa;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
+        /* Add Project Form */
+        .form-group {
+            margin-bottom: 24px;
         }
 
-        .skill-card {
-            background: white;
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .skill-name {
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
             font-weight: 600;
-            margin-bottom: 12px;
+            color: #cbd5e1;
         }
 
-        .skill-bar {
-            height: 8px;
-            background-color: #e2e8f0;
-            border-radius: 10px;
-            overflow: hidden;
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 16px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
         }
 
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, #2563eb, #7c3aed);
-            border-radius: 10px;
-            width: 0%;
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #60a5fa;
+            background: rgba(0, 0, 0, 0.6);
         }
 
+        .btn-submit {
+            background: linear-gradient(135deg, #60a5fa, #a855f7);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 40px;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.3);
+        }
+
+        /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
         }
 
         .project-card {
-            background: white;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
             overflow: hidden;
-            border: 1px solid #e2e8f0;
-            transition: all 0.2s;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            transition: all 0.3s;
         }
 
         .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            border-color: rgba(96, 165, 250, 0.6);
+            box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-icon {
+            background: linear-gradient(135deg, #60a5fa20, #a855f720);
+            padding: 30px;
+            text-align: center;
+            font-size: 3rem;
         }
 
         .project-content {
             padding: 24px;
         }
 
+        .project-language {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .lang-python { background: #3776ab30; color: #87cefa; }
+        .lang-html { background: #e34c2630; color: #ffa07a; }
+        .lang-java { background: #b0721930; color: #deb887; }
+        .lang-javascript { background: #f7df1e30; color: #ffeaa7; }
+
         .project-title {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 12px;
         }
 
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 16px 0;
-        }
-
-        .project-tech span {
-            background: #eef2ff;
-            color: #1e40af;
-            font-size: 0.75rem;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: 500;
+        .project-description {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
 
         .github-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #2563eb;
+            color: #60a5fa;
             text-decoration: none;
             font-weight: 600;
-            margin-top: 12px;
         }
 
+        .delete-btn {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+            padding: 8px 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 16px;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .delete-btn:hover {
+            background: #ef4444;
+            color: white;
+        }
+
+        .empty-projects {
+            text-align: center;
+            padding: 80px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 28px;
+            border: 1px dashed rgba(96, 165, 250, 0.3);
+        }
+
+        .empty-projects i {
+            font-size: 4rem;
+            color: #60a5fa;
+            margin-bottom: 20px;
+        }
+
+        /* Social Links */
         .social-links {
             display: flex;
-            gap: 24px;
+            gap: 20px;
             justify-content: center;
-            margin-top: 32px;
             flex-wrap: wrap;
         }
 
         .social-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: #f1f5f9;
-            padding: 10px 20px;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 24px;
             border-radius: 40px;
             text-decoration: none;
-            color: #1e293b;
+            color: #cbd5e1;
             font-weight: 500;
-            transition: all 0.2s;
+            transition: all 0.3s;
+            border: 1px solid rgba(96, 165, 250, 0.2);
         }
 
         .social-link:hover {
-            background: #e2e8f0;
-            transform: translateY(-2px);
+            background: rgba(96, 165, 250, 0.2);
+            transform: translateY(-3px);
+            color: #60a5fa;
         }
 
         footer {
             text-align: center;
-            padding: 32px;
-            border-top: 1px solid #e2e8f0;
-            color: #64748b;
+            padding: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 40px;
+            color: #94a3b8;
         }
 
         @media (max-width: 768px) {
-            .hero-grid {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .nav-links {
-                gap: 20px;
-            }
+            .container { padding: 0 20px; }
+            .hero-content h1 { font-size: 2rem; }
+            .hero-photo img { width: 220px; height: 220px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .hero-grid { flex-direction: column-reverse; text-align: center; }
+            .hero-buttons { justify-content: center; }
+            .nav-links { gap: 20px; }
         }
     </style>
 </head>
 <body>
 
+<!-- Background Image -->
+<div class="bg-wrapper">
+    <img class="bg-image" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072" alt="Background">
+    <div class="bg-overlay"></div>
+</div>
+
+<!-- Animated Particles -->
+<div class="particles" id="particles"></div>
+
 <header>
     <div class="container">
         <nav>
-            <div class="logo">Anuhas Abesinpathirana</div>
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-terminal"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Anuhas Abesinpathirana</h1>
+                    <p>CS Student & Developer</p>
+                </div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#add-project">Add Project</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -352,16 +541,17 @@
 </header>
 
 <main>
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
                     <h1>Hi, I'm <span class="highlight">Anuhas</span></h1>
-                    <div class="hero-tagline">Linux Enthusiast | Computer Science Student | Aspiring Developer</div>
-                    <p>Currently studying at Jiangxi University of Science and Technology, China. From Sri Lanka, passionate about Linux, system administration, and building meaningful projects.</p>
+                    <div class="hero-tagline">🐧 Linux Enthusiast | 💻 CS Student | 🚀 Aspiring Developer</div>
+                    <p>Currently studying at Jiangxi University of Science and Technology, China. From Sri Lanka 🇱🇰 → China 🇨🇳, passionate about Linux, system administration, and building meaningful projects.</p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                        <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact Me</a>
                     </div>
                 </div>
                 <div class="hero-photo">
@@ -371,13 +561,14 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-card">
+            <h2 class="section-title">📖 About Me</h2>
+            <div class="glass-card">
                 <p>I'm Anuhas Abesinpathirana, a computer science student from Sri Lanka, currently pursuing my studies at Jiangxi University of Science and Technology in China. I have a strong interest in Linux systems, cybersecurity, and software development.</p>
                 <div class="info-grid">
-                    <div class="info-item"><i class="fas fa-map-marker-alt"></i> <span>From: Sri Lanka / Studying in China</span></div>
+                    <div class="info-item"><i class="fas fa-map-marker-alt"></i> <span>🇱🇰 Sri Lanka → 🇨🇳 China</span></div>
                     <div class="info-item"><i class="fas fa-envelope"></i> <span>xanuhas@gmail.com</span></div>
                     <div class="info-item"><i class="fas fa-university"></i> <span>Jiangxi University of Science and Technology</span></div>
                     <div class="info-item"><i class="fas fa-laptop-code"></i> <span>Focus: Linux, DevOps, Web Development</span></div>
@@ -386,70 +577,195 @@
         </div>
     </section>
 
-    <section id="skills">
+    <!-- Add Project Section -->
+    <section id="add-project">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card"><div class="skill-name">Linux / CentOS</div><div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div><p>System administration, bash scripting</p></div>
-                <div class="skill-card"><div class="skill-name">Python</div><div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div><p>Scripting, automation, basic web</p></div>
-                <div class="skill-card"><div class="skill-name">Web Dev (HTML/CSS/JS)</div><div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div><p>Responsive design, frontend basics</p></div>
-                <div class="skill-card"><div class="skill-name">Git & GitHub</div><div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div><p>Version control, collaboration</p></div>
-                <div class="skill-card"><div class="skill-name">Cybersecurity Basics</div><div class="skill-bar"><div class="skill-progress" style="width: 65%"></div></div><p>Network scanning, ethical hacking concepts</p></div>
-                <div class="skill-card"><div class="skill-name">Virtualization (VMware)</div><div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div><p>VM setup, networking, snapshots</p></div>
+            <h2 class="section-title">➕ Add New Project</h2>
+            <div class="glass-card">
+                <div class="form-group">
+                    <label>📌 Project Title (e.g., Snake Game)</label>
+                    <input type="text" id="projectTitle" placeholder="Enter your project title">
+                </div>
+                <div class="form-group">
+                    <label>📝 Short Description</label>
+                    <input type="text" id="projectDesc" placeholder="Brief description of your project">
+                </div>
+                <div class="form-group">
+                    <label>💻 Programming Language</label>
+                    <select id="projectLang">
+                        <option value="python">🐍 Python</option>
+                        <option value="html">🌐 HTML/CSS</option>
+                        <option value="java">☕ Java</option>
+                        <option value="javascript">📜 JavaScript</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>🔗 GitHub Link (optional)</label>
+                    <input type="text" id="projectLink" placeholder="https://github.com/username/project">
+                </div>
+                <button class="btn-submit" onclick="addProject()"><i class="fas fa-plus-circle"></i> Upload Project</button>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-title">my-first-project</div>
-                        <p>Initial GitHub repository exploring version control, Linux commands, and basic scripting.</p>
-                        <div class="project-tech"><span>Git</span><span>Linux</span><span>Bash</span></div>
-                        <a href="https://github.com/x-Anuhas/my-first-project" class="github-link" target="_blank"><i class="fab fa-github"></i> View on GitHub →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-title">Linux Lab Projects</div>
-                        <p>Hands-on exercises from Linux System Programming lab: CentOS installation, static IP configuration, user/group management, and SSH setup.</p>
-                        <div class="project-tech"><span>CentOS 7</span><span>VMware</span><span>Bash</span><span>SSH</span></div>
-                        <a href="#" class="github-link" target="_blank"><i class="fab fa-github"></i> More labs coming soon →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-title">Portfolio Website</div>
-                        <p>This very website — a clean, responsive portfolio to showcase my skills and connect with the dev community.</p>
-                        <div class="project-tech"><span>HTML5</span><span>CSS3</span><span>Flexbox/Grid</span></div>
-                        <a href="#" class="github-link"><i class="fab fa-github"></i> Source on GitHub (soon)</a>
-                    </div>
-                </div>
-            </div>
+            <h2 class="section-title">📂 My Projects</h2>
+            <div id="projectsGrid" class="projects-grid"></div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="section-title">Connect With Me</h2>
-            <div class="contact-card">
+            <h2 class="section-title">🌐 Connect With Me</h2>
+            <div class="glass-card">
                 <div class="social-links">
                     <a href="https://github.com/x-Anuhas" class="social-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                     <a href="https://www.instagram.com/x_anuhas" class="social-link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                     <a href="mailto:xanuhas@gmail.com" class="social-link"><i class="fas fa-envelope"></i> Email</a>
                 </div>
-                <p style="text-align: center; margin-top: 32px; color: #475569;">Open to collaboration, Linux discussions, and internship opportunities. Feel free to reach out!</p>
+                <p style="text-align: center; margin-top: 32px; color: #cbd5e1;">Open to collaboration, Linux discussions, and internship opportunities. Feel free to reach out! 🚀</p>
             </div>
         </div>
     </section>
 </main>
 
 <footer>
-    <p>© 2025 Anuhas Abesinpathirana. Built with HTML/CSS.</p>
+    <p>© 2025 Anuhas Abesinpathirana | 🇱🇰 Sri Lanka → 🇨🇳 China</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Built with <i class="fas fa-heart" style="color: #ef4444;"></i> using HTML/CSS</p>
 </footer>
+
+<script>
+    // Create floating particles
+    function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = Math.random() * 5 + 2;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+            particlesContainer.appendChild(particle);
+        }
+    }
+
+    // Load projects from localStorage
+    let projects = JSON.parse(localStorage.getItem('premiumProjects')) || [];
+
+    function saveProjects() {
+        localStorage.setItem('premiumProjects', JSON.stringify(projects));
+    }
+
+    function getLangClass(lang) {
+        const classes = {
+            'python': 'lang-python',
+            'html': 'lang-html',
+            'java': 'lang-java',
+            'javascript': 'lang-javascript'
+        };
+        return classes[lang] || 'lang-python';
+    }
+
+    function getLangName(lang) {
+        const names = {
+            'python': '🐍 Python',
+            'html': '🌐 HTML/CSS',
+            'java': '☕ Java',
+            'javascript': '📜 JavaScript'
+        };
+        return names[lang] || 'Python';
+    }
+
+    function getProjectIcon(lang) {
+        const icons = {
+            'python': '<i class="fab fa-python"></i>',
+            'html': '<i class="fab fa-html5"></i>',
+            'java': '<i class="fab fa-java"></i>',
+            'javascript': '<i class="fab fa-js"></i>'
+        };
+        return icons[lang] || '<i class="fas fa-code"></i>';
+    }
+
+    function displayProjects() {
+        const grid = document.getElementById('projectsGrid');
+        
+        if (projects.length === 0) {
+            grid.innerHTML = `
+                <div class="empty-projects">
+                    <i class="fas fa-folder-open"></i>
+                    <h3>No Projects Yet</h3>
+                    <p>Add your first project using the form above! 🚀</p>
+                </div>
+            `;
+            return;
+        }
+        
+        grid.innerHTML = projects.map((project, index) => `
+            <div class="project-card">
+                <div class="project-icon">
+                    ${getProjectIcon(project.lang)}
+                </div>
+                <div class="project-content">
+                    <span class="project-language ${getLangClass(project.lang)}">${getLangName(project.lang)}</span>
+                    <div class="project-title">${escapeHtml(project.title)}</div>
+                    <div class="project-description">${escapeHtml(project.description)}</div>
+                    ${project.link ? `<a href="${project.link}" class="github-link" target="_blank"><i class="fab fa-github"></i> View on GitHub →</a>` : ''}
+                    <button class="delete-btn" onclick="deleteProject(${index})"><i class="fas fa-trash-alt"></i> Delete Project</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    function addProject() {
+        const title = document.getElementById('projectTitle').value.trim();
+        const description = document.getElementById('projectDesc').value.trim();
+        const lang = document.getElementById('projectLang').value;
+        const link = document.getElementById('projectLink').value.trim();
+        
+        if (!title || !description) {
+            alert('⚠️ Please fill in both Title and Description!');
+            return;
+        }
+        
+        projects.push({
+            title: title,
+            description: description,
+            lang: lang,
+            link: link
+        });
+        
+        saveProjects();
+        displayProjects();
+        
+        document.getElementById('projectTitle').value = '';
+        document.getElementById('projectDesc').value = '';
+        document.getElementById('projectLink').value = '';
+        
+        alert('✅ Project added successfully! 🎉');
+    }
+    
+    function deleteProject(index) {
+        if (confirm('Are you sure you want to delete this project?')) {
+            projects.splice(index, 1);
+            saveProjects();
+            displayProjects();
+        }
+    }
+    
+    createParticles();
+    displayProjects();
+</script>
 
 </body>
 </html>
