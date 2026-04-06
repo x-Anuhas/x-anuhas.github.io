@@ -569,6 +569,39 @@
             .social-link span { display: none; }
             .social-link i { font-size: 1.3rem; margin: 0; }
         }
+
+        /* =========================================
+           --- NEW ADDED ANIMATION CSS SECTION --- 
+           ========================================= */
+
+        /* 1. Initial Load Animations for Hero/Header */
+        header { animation: slideDown 0.8s ease-out forwards; }
+        .hero-content h1 { animation: slideUpFade 0.8s ease-out 0.2s forwards; opacity: 0; }
+        .hero-tagline { animation: slideUpFade 0.8s ease-out 0.4s forwards; opacity: 0; }
+        .hero-content p { animation: slideUpFade 0.8s ease-out 0.6s forwards; opacity: 0; }
+        .hero-buttons { animation: slideUpFade 0.8s ease-out 0.8s forwards; opacity: 0; }
+        .hero-photo { animation: popIn 1s cubic-bezier(0.26, 0.53, 0.74, 1.48) 0.5s forwards; opacity: 0; }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideUpFade {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* 2. Scroll Reveal Animations via CSS Classes */
+        .reveal { 
+            opacity: 0; /* Hidden initially before scrolling into view */
+        }
+        .reveal.active { 
+            animation: slideUpFade 0.8s ease-out forwards; 
+        }
     </style>
 </head>
 <body>
@@ -635,7 +668,6 @@
         </div>
     </section>
 
-    <!-- Admin Panel - Visible only when ?admin=true -->
     <div class="container" id="adminPanel">
         <div class="admin-panel glass-card" id="adminPanelForm">
             <h3 style="margin-bottom: 20px; color: #D4AF37;">👑 Admin: Add New Project</h3>
@@ -831,6 +863,59 @@
     createParticles();
     checkAdminMode();
     displayProjects();
+
+
+    /* =========================================
+       --- NEW ADDED ANIMATION LOGIC SECTION --- 
+       ========================================= */
+    document.addEventListener("DOMContentLoaded", () => {
+        // 1. Tag specific elements with the `.reveal` class
+        const staticElements = document.querySelectorAll('.section-title, .glass-card, footer');
+        staticElements.forEach(el => el.classList.add('reveal'));
+
+        // Tag social links and stagger their animations
+        const socialLinks = document.querySelectorAll('.social-link');
+        socialLinks.forEach((link, index) => {
+            link.classList.add('reveal');
+            link.style.animationDelay = `${index * 0.15}s`;
+        });
+
+        // 2. Set up an IntersectionObserver to trigger animations when scrolling
+        const observerOptions = {
+            threshold: 0.1, // Trigger when 10% of the item is visible
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Ensure it only animates once
+                }
+            });
+        }, observerOptions);
+
+        // Tell observer to watch all `.reveal` elements
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // 3. Since Projects are loaded dynamically via JS, we use a MutationObserver 
+        // to watch for new cards being added to the grid, so they also get animated!
+        const projectsGrid = document.getElementById('projectsGrid');
+        if (projectsGrid) {
+            const mutationObserver = new MutationObserver((mutations) => {
+                mutations.forEach(mutation => {
+                    mutation.addedNodes.forEach((node, index) => {
+                        if (node.nodeType === 1 && node.classList.contains('project-card')) {
+                            node.classList.add('reveal');
+                            node.style.animationDelay = `${index * 0.15}s`; // Stagger card loading
+                            revealObserver.observe(node);
+                        }
+                    });
+                });
+            });
+            mutationObserver.observe(projectsGrid, { childList: true });
+        }
+    });
 </script>
 
 </body>
