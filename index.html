@@ -15,13 +15,13 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            color: #ffffff;
+            color: #1a1a2e;
             line-height: 1.6;
             scroll-behavior: smooth;
             min-height: 100vh;
         }
 
-        /* Premium Background Image with Overlay */
+        /* Premium Light Background with Photo */
         .bg-wrapper {
             position: fixed;
             top: 0;
@@ -38,7 +38,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.7);
+            filter: brightness(0.98) contrast(1.02);
         }
 
         .bg-overlay {
@@ -47,10 +47,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(10, 10, 30, 0.85), rgba(30, 20, 50, 0.9));
+            background: rgba(255, 255, 255, 0.9);
         }
 
-        /* Animated particles effect */
+        /* Gold Particles */
         .particles {
             position: fixed;
             top: 0;
@@ -63,14 +63,15 @@
 
         .particle {
             position: absolute;
-            background: rgba(96, 165, 250, 0.3);
+            background: rgba(212, 175, 55, 0.2);
             border-radius: 50%;
-            animation: float 15s infinite ease-in-out;
+            animation: float 20s infinite ease-in-out;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
-            50% { opacity: 0.5; }
+            20% { opacity: 0.5; }
+            80% { opacity: 0.5; }
             100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
         }
 
@@ -80,21 +81,22 @@
             padding: 0 32px;
         }
 
-        /* Glassmorphism Header */
+        /* Premium Glass Header - Light */
         header {
-            background: rgba(15, 25, 45, 0.7);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 18px 0;
             flex-wrap: wrap;
             gap: 20px;
         }
@@ -108,19 +110,19 @@
         .logo-icon {
             width: 45px;
             height: 45px;
-            background: linear-gradient(135deg, #60a5fa, #a855f7);
+            background: linear-gradient(135deg, #D4AF37, #B8860B);
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
-            box-shadow: 0 5px 15px rgba(96, 165, 250, 0.3);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.25);
         }
 
         .logo-text h1 {
             font-size: 1.3rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #ffffff, #60a5fa);
+            background: linear-gradient(135deg, #1a1a2e, #D4AF37);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -128,7 +130,7 @@
 
         .logo-text p {
             font-size: 0.7rem;
-            color: #94a3b8;
+            color: #666;
         }
 
         .nav-links {
@@ -139,14 +141,14 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #cbd5e1;
+            color: #333;
             font-weight: 500;
             transition: all 0.3s;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: #60a5fa;
+            color: #D4AF37;
         }
 
         .nav-links a::after {
@@ -156,7 +158,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #60a5fa, #a855f7);
+            background: linear-gradient(90deg, #D4AF37, #B8860B);
             transition: width 0.3s;
         }
 
@@ -164,7 +166,7 @@
             width: 100%;
         }
 
-        /* Buttons */
+        /* Premium Buttons */
         .btn {
             display: inline-block;
             padding: 12px 28px;
@@ -172,29 +174,32 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #60a5fa, #a855f7);
+            background: linear-gradient(135deg, #D4AF37, #B8860B);
             color: white;
             border: none;
-            box-shadow: 0 5px 15px rgba(96, 165, 250, 0.3);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.4);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
         }
 
         .btn-outline {
             background: transparent;
-            color: #cbd5e1;
-            border: 1px solid #60a5fa;
+            color: #D4AF37;
+            border: 1.5px solid #D4AF37;
         }
 
         .btn-outline:hover {
-            background: rgba(96, 165, 250, 0.1);
+            background: rgba(212, 175, 55, 0.1);
             transform: translateY(-3px);
+            color: #B8860B;
+            border-color: #B8860B;
         }
 
         section {
@@ -206,15 +211,16 @@
             font-weight: 700;
             margin-bottom: 48px;
             text-align: center;
-            background: linear-gradient(135deg, #ffffff, #60a5fa);
+            background: linear-gradient(135deg, #1a1a2e, #D4AF37, #B8860B);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            letter-spacing: -0.5px;
         }
 
         /* Hero Section */
         .hero {
-            padding: 100px 0 80px;
+            padding: 80px 0 60px;
         }
 
         .hero-grid {
@@ -232,10 +238,11 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 16px;
+            color: #1a1a2e;
         }
 
         .highlight {
-            background: linear-gradient(135deg, #60a5fa, #a855f7);
+            background: linear-gradient(135deg, #D4AF37, #B8860B);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -243,7 +250,7 @@
 
         .hero-tagline {
             font-size: 1.3rem;
-            color: #cbd5e1;
+            color: #555;
             margin-bottom: 24px;
         }
 
@@ -263,29 +270,32 @@
             height: 320px;
             object-fit: cover;
             border-radius: 50%;
-            border: 4px solid rgba(96, 165, 250, 0.5);
-            box-shadow: 0 30px 40px -20px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
+            border: 4px solid #D4AF37;
+            box-shadow: 0 30px 40px -20px rgba(0,0,0,0.15);
+            transition: all 0.3s;
         }
 
         .hero-photo img:hover {
             transform: scale(1.02);
-            border-color: #60a5fa;
+            border-color: #B8860B;
+            box-shadow: 0 30px 40px -15px rgba(212, 175, 55, 0.3);
         }
 
-        /* Glass Cards */
+        /* Premium Glass Cards - Light */
         .glass-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 28px;
             padding: 32px;
-            border: 1px solid rgba(96, 165, 250, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
         }
 
         .glass-card:hover {
-            border-color: rgba(96, 165, 250, 0.5);
+            border-color: rgba(212, 175, 55, 0.6);
             transform: translateY(-5px);
+            box-shadow: 0 20px 35px -15px rgba(0,0,0,0.1);
         }
 
         .info-grid {
@@ -300,64 +310,74 @@
             align-items: center;
             gap: 12px;
             font-size: 0.95rem;
+            color: #333;
         }
 
         .info-item i {
-            width: 32px;
-            height: 32px;
-            background: rgba(96, 165, 250, 0.2);
-            border-radius: 10px;
+            width: 36px;
+            height: 36px;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #60a5fa;
+            color: #D4AF37;
+            font-size: 1.1rem;
         }
 
-        /* Add Project Form */
+        /* Admin Panel */
+        .admin-panel {
+            display: none;
+            margin-bottom: 40px;
+        }
+
+        .admin-panel.show {
+            display: block;
+        }
+
         .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 600;
-            color: #cbd5e1;
+            color: #D4AF37;
         }
 
         .form-group input, .form-group select {
             width: 100%;
             padding: 14px 18px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(96, 165, 250, 0.3);
-            border-radius: 16px;
-            color: white;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 14px;
+            color: #333;
             font-size: 1rem;
             transition: all 0.3s;
         }
 
         .form-group input:focus, .form-group select:focus {
             outline: none;
-            border-color: #60a5fa;
-            background: rgba(0, 0, 0, 0.6);
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
         }
 
         .btn-submit {
-            background: linear-gradient(135deg, #60a5fa, #a855f7);
+            background: linear-gradient(135deg, #D4AF37, #B8860B);
             border: none;
-            padding: 14px 32px;
+            padding: 14px 24px;
             border-radius: 40px;
             color: white;
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
             width: 100%;
+            transition: all 0.3s;
         }
 
         .btn-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
         }
 
         /* Projects Grid */
@@ -368,25 +388,27 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 24px;
             overflow: hidden;
-            border: 1px solid rgba(96, 165, 250, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.25);
             transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
         .project-card:hover {
             transform: translateY(-8px);
-            border-color: rgba(96, 165, 250, 0.6);
-            box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.5);
+            border-color: #D4AF37;
+            box-shadow: 0 25px 40px -20px rgba(0, 0, 0, 0.15);
         }
 
         .project-icon {
-            background: linear-gradient(135deg, #60a5fa20, #a855f720);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(184, 134, 11, 0.05));
             padding: 30px;
             text-align: center;
             font-size: 3rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         .project-content {
@@ -402,19 +424,20 @@
             margin-bottom: 15px;
         }
 
-        .lang-python { background: #3776ab30; color: #87cefa; }
-        .lang-html { background: #e34c2630; color: #ffa07a; }
-        .lang-java { background: #b0721930; color: #deb887; }
-        .lang-javascript { background: #f7df1e30; color: #ffeaa7; }
+        .lang-python { background: rgba(55, 118, 171, 0.15); color: #3776ab; }
+        .lang-html { background: rgba(227, 76, 38, 0.15); color: #e34c26; }
+        .lang-java { background: rgba(176, 114, 25, 0.15); color: #b07219; }
+        .lang-javascript { background: rgba(247, 223, 30, 0.2); color: #b8860b; }
 
         .project-title {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 12px;
+            color: #1a1a2e;
         }
 
         .project-description {
-            color: #cbd5e1;
+            color: #555;
             margin-bottom: 20px;
             line-height: 1.5;
         }
@@ -423,13 +446,18 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #60a5fa;
+            color: #D4AF37;
             text-decoration: none;
             font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .github-link:hover {
+            color: #B8860B;
         }
 
         .delete-btn {
-            background: rgba(239, 68, 68, 0.2);
+            background: rgba(239, 68, 68, 0.1);
             border: 1px solid rgba(239, 68, 68, 0.3);
             color: #ef4444;
             padding: 8px 16px;
@@ -438,6 +466,7 @@
             margin-top: 16px;
             width: 100%;
             transition: all 0.3s;
+            font-weight: 500;
         }
 
         .delete-btn:hover {
@@ -445,21 +474,7 @@
             color: white;
         }
 
-        .empty-projects {
-            text-align: center;
-            padding: 80px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 28px;
-            border: 1px dashed rgba(96, 165, 250, 0.3);
-        }
-
-        .empty-projects i {
-            font-size: 4rem;
-            color: #60a5fa;
-            margin-bottom: 20px;
-        }
-
-        /* Social Links */
+        /* Social Links - App Style Icons */
         .social-links {
             display: flex;
             gap: 20px;
@@ -470,29 +485,76 @@
         .social-link {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px 24px;
-            border-radius: 40px;
+            gap: 12px;
+            padding: 14px 28px;
+            border-radius: 50px;
             text-decoration: none;
-            color: #cbd5e1;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s;
-            border: 1px solid rgba(96, 165, 250, 0.2);
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
-        .social-link:hover {
-            background: rgba(96, 165, 250, 0.2);
+        .social-link i {
+            font-size: 1.4rem;
+        }
+
+        .social-link span {
+            font-size: 0.95rem;
+        }
+
+        /* Individual platform colors */
+        .social-link.github {
+            color: #333;
+            border-left: 4px solid #333;
+        }
+        .social-link.github:hover {
+            background: #333;
+            color: white;
             transform: translateY(-3px);
-            color: #60a5fa;
+            box-shadow: 0 10px 25px rgba(51, 51, 51, 0.3);
+        }
+
+        .social-link.instagram {
+            color: #E4405F;
+            border-left: 4px solid #E4405F;
+        }
+        .social-link.instagram:hover {
+            background: linear-gradient(135deg, #833AB4, #E4405F, #F77737);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(228, 64, 95, 0.3);
+        }
+
+        .social-link.facebook {
+            color: #1877F2;
+            border-left: 4px solid #1877F2;
+        }
+        .social-link.facebook:hover {
+            background: #1877F2;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(24, 119, 242, 0.3);
+        }
+
+        .social-link.email {
+            color: #D4AF37;
+            border-left: 4px solid #D4AF37;
+        }
+        .social-link.email:hover {
+            background: linear-gradient(135deg, #D4AF37, #B8860B);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
         }
 
         footer {
             text-align: center;
             padding: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
             margin-top: 40px;
-            color: #94a3b8;
+            color: #666;
         }
 
         @media (max-width: 768px) {
@@ -503,27 +565,26 @@
             .hero-grid { flex-direction: column-reverse; text-align: center; }
             .hero-buttons { justify-content: center; }
             .nav-links { gap: 20px; }
+            .social-link { padding: 10px 18px; }
+            .social-link span { display: none; }
+            .social-link i { font-size: 1.3rem; margin: 0; }
         }
     </style>
 </head>
 <body>
 
-<!-- Background Image -->
 <div class="bg-wrapper">
-    <img class="bg-image" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072" alt="Background">
+    <img class="bg-image" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070" alt="Background">
     <div class="bg-overlay"></div>
 </div>
 
-<!-- Animated Particles -->
 <div class="particles" id="particles"></div>
 
 <header>
     <div class="container">
         <nav>
             <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-terminal"></i>
-                </div>
+                <div class="logo-icon"><i class="fas fa-crown"></i></div>
                 <div class="logo-text">
                     <h1>Anuhas Abesinpathirana</h1>
                     <p>CS Student & Developer</p>
@@ -532,7 +593,6 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#add-project">Add Project</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -541,13 +601,12 @@
 </header>
 
 <main>
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
                     <h1>Hi, I'm <span class="highlight">Anuhas</span></h1>
-                    <div class="hero-tagline">🐧 Linux Enthusiast | 💻 CS Student | 🚀 Aspiring Developer</div>
+                    <div class="hero-tagline">🐧 Linux Enthusiast | 💻 CS Student | ✨ Aspiring Developer</div>
                     <p>Currently studying at Jiangxi University of Science and Technology, China. From Sri Lanka 🇱🇰 → China 🇨🇳, passionate about Linux, system administration, and building meaningful projects.</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
@@ -561,10 +620,9 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title">📖 About Me</h2>
+            <h2 class="section-title">✨ About Me</h2>
             <div class="glass-card">
                 <p>I'm Anuhas Abesinpathirana, a computer science student from Sri Lanka, currently pursuing my studies at Jiangxi University of Science and Technology in China. I have a strong interest in Linux systems, cybersecurity, and software development.</p>
                 <div class="info-grid">
@@ -577,38 +635,35 @@
         </div>
     </section>
 
-    <!-- Add Project Section -->
-    <section id="add-project">
-        <div class="container">
-            <h2 class="section-title">➕ Add New Project</h2>
-            <div class="glass-card">
-                <div class="form-group">
-                    <label>📌 Project Title (e.g., Snake Game)</label>
-                    <input type="text" id="projectTitle" placeholder="Enter your project title">
-                </div>
-                <div class="form-group">
-                    <label>📝 Short Description</label>
-                    <input type="text" id="projectDesc" placeholder="Brief description of your project">
-                </div>
-                <div class="form-group">
-                    <label>💻 Programming Language</label>
-                    <select id="projectLang">
-                        <option value="python">🐍 Python</option>
-                        <option value="html">🌐 HTML/CSS</option>
-                        <option value="java">☕ Java</option>
-                        <option value="javascript">📜 JavaScript</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>🔗 GitHub Link (optional)</label>
-                    <input type="text" id="projectLink" placeholder="https://github.com/username/project">
-                </div>
-                <button class="btn-submit" onclick="addProject()"><i class="fas fa-plus-circle"></i> Upload Project</button>
+    <!-- Admin Panel - Visible only when ?admin=true -->
+    <div class="container" id="adminPanel">
+        <div class="admin-panel glass-card" id="adminPanelForm">
+            <h3 style="margin-bottom: 20px; color: #D4AF37;">👑 Admin: Add New Project</h3>
+            <div class="form-group">
+                <label>Project Title</label>
+                <input type="text" id="projectTitle" placeholder="e.g., Snake Game">
             </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" id="projectDesc" placeholder="Short description">
+            </div>
+            <div class="form-group">
+                <label>Programming Language</label>
+                <select id="projectLang">
+                    <option value="python">🐍 Python</option>
+                    <option value="html">🌐 HTML/CSS</option>
+                    <option value="java">☕ Java</option>
+                    <option value="javascript">📜 JavaScript</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>GitHub Link (optional)</label>
+                <input type="text" id="projectLink" placeholder="https://github.com/...">
+            </div>
+            <button class="btn-submit" onclick="addProject()">✨ Add Project</button>
         </div>
-    </section>
+    </div>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title">📂 My Projects</h2>
@@ -616,17 +671,29 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <h2 class="section-title">🌐 Connect With Me</h2>
             <div class="glass-card">
                 <div class="social-links">
-                    <a href="https://github.com/x-Anuhas" class="social-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://www.instagram.com/x_anuhas" class="social-link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="mailto:xanuhas@gmail.com" class="social-link"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://github.com/x-Anuhas" class="social-link github" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.instagram.com/x_anuhas" class="social-link instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.facebook.com/share/18ZYAQHQgy/" class="social-link facebook" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="mailto:xanuhas@gmail.com" class="social-link email">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
                 </div>
-                <p style="text-align: center; margin-top: 32px; color: #cbd5e1;">Open to collaboration, Linux discussions, and internship opportunities. Feel free to reach out! 🚀</p>
+                <p style="text-align: center; margin-top: 32px; color: #555;">✨ Computer Science student, still learning and growing every day. Open to connecting with fellow learners, tech discussions, and study buddies! 🚀</p>
             </div>
         </div>
     </section>
@@ -634,88 +701,71 @@
 
 <footer>
     <p>© 2025 Anuhas Abesinpathirana | 🇱🇰 Sri Lanka → 🇨🇳 China</p>
-    <p style="font-size: 0.8rem; margin-top: 10px;">Built with <i class="fas fa-heart" style="color: #ef4444;"></i> using HTML/CSS</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Every day is a learning opportunity ✨</p>
 </footer>
 
 <script>
-    // Create floating particles
-    function createParticles() {
-        const particlesContainer = document.getElementById('particles');
-        for (let i = 0; i < 50; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            const size = Math.random() * 5 + 2;
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 15 + 's';
-            particle.style.animationDuration = Math.random() * 10 + 10 + 's';
-            particlesContainer.appendChild(particle);
+    // Check if admin mode is active
+    let isAdmin = false;
+    
+    function checkAdminMode() {
+        const urlParams = new URLSearchParams(window.location.search);
+        isAdmin = urlParams.get('admin') === 'true';
+        
+        if (isAdmin) {
+            const adminPanel = document.getElementById('adminPanelForm');
+            adminPanel.classList.add('show');
         }
     }
-
+    
     // Load projects from localStorage
-    let projects = JSON.parse(localStorage.getItem('premiumProjects')) || [];
+    let projects = JSON.parse(localStorage.getItem('anuhasProjects')) || [];
+
+    // Default projects if empty
+    if (projects.length === 0) {
+        projects = [
+            { title: "Snake Game", description: "Classic Snake game with Python and Pygame", lang: "python", link: "https://github.com/x-Anuhas/snake-game" },
+            { title: "Portfolio Website", description: "Personal portfolio website built with HTML/CSS/JS", lang: "html", link: "https://github.com/x-Anuhas/x-anuhas.github.io" },
+            { title: "Linux System Monitor", description: "Real-time monitoring tool for CentOS", lang: "python", link: "" }
+        ];
+        saveProjects();
+    }
 
     function saveProjects() {
-        localStorage.setItem('premiumProjects', JSON.stringify(projects));
+        localStorage.setItem('anuhasProjects', JSON.stringify(projects));
     }
 
     function getLangClass(lang) {
-        const classes = {
-            'python': 'lang-python',
-            'html': 'lang-html',
-            'java': 'lang-java',
-            'javascript': 'lang-javascript'
-        };
+        const classes = { 'python': 'lang-python', 'html': 'lang-html', 'java': 'lang-java', 'javascript': 'lang-javascript' };
         return classes[lang] || 'lang-python';
     }
 
     function getLangName(lang) {
-        const names = {
-            'python': '🐍 Python',
-            'html': '🌐 HTML/CSS',
-            'java': '☕ Java',
-            'javascript': '📜 JavaScript'
-        };
+        const names = { 'python': '🐍 Python', 'html': '🌐 HTML/CSS', 'java': '☕ Java', 'javascript': '📜 JavaScript' };
         return names[lang] || 'Python';
     }
 
     function getProjectIcon(lang) {
-        const icons = {
-            'python': '<i class="fab fa-python"></i>',
-            'html': '<i class="fab fa-html5"></i>',
-            'java': '<i class="fab fa-java"></i>',
-            'javascript': '<i class="fab fa-js"></i>'
-        };
+        const icons = { 'python': '<i class="fab fa-python"></i>', 'html': '<i class="fab fa-html5"></i>', 'java': '<i class="fab fa-java"></i>', 'javascript': '<i class="fab fa-js"></i>' };
         return icons[lang] || '<i class="fas fa-code"></i>';
     }
 
     function displayProjects() {
         const grid = document.getElementById('projectsGrid');
-        
         if (projects.length === 0) {
-            grid.innerHTML = `
-                <div class="empty-projects">
-                    <i class="fas fa-folder-open"></i>
-                    <h3>No Projects Yet</h3>
-                    <p>Add your first project using the form above! 🚀</p>
-                </div>
-            `;
+            grid.innerHTML = `<div class="glass-card" style="text-align:center; padding:60px;"><i class="fas fa-crown" style="font-size:3rem; color:#D4AF37;"></i><h3 style="margin-top:20px;">No projects yet</h3><p>Check back soon for my latest work! ✨</p></div>`;
             return;
         }
         
-        grid.innerHTML = projects.map((project, index) => `
+        grid.innerHTML = projects.map((p, i) => `
             <div class="project-card">
-                <div class="project-icon">
-                    ${getProjectIcon(project.lang)}
-                </div>
+                <div class="project-icon">${getProjectIcon(p.lang)}</div>
                 <div class="project-content">
-                    <span class="project-language ${getLangClass(project.lang)}">${getLangName(project.lang)}</span>
-                    <div class="project-title">${escapeHtml(project.title)}</div>
-                    <div class="project-description">${escapeHtml(project.description)}</div>
-                    ${project.link ? `<a href="${project.link}" class="github-link" target="_blank"><i class="fab fa-github"></i> View on GitHub →</a>` : ''}
-                    <button class="delete-btn" onclick="deleteProject(${index})"><i class="fas fa-trash-alt"></i> Delete Project</button>
+                    <span class="project-language ${getLangClass(p.lang)}">${getLangName(p.lang)}</span>
+                    <div class="project-title">${escapeHtml(p.title)}</div>
+                    <div class="project-description">${escapeHtml(p.description)}</div>
+                    ${p.link ? `<a href="${p.link}" class="github-link" target="_blank"><i class="fab fa-github"></i> View on GitHub →</a>` : ''}
+                    ${isAdmin ? `<button class="delete-btn" onclick="deleteProject(${i})"><i class="fas fa-trash-alt"></i> Delete Project</button>` : ''}
                 </div>
             </div>
         `).join('');
@@ -728,42 +778,58 @@
     }
 
     function addProject() {
-        const title = document.getElementById('projectTitle').value.trim();
-        const description = document.getElementById('projectDesc').value.trim();
-        const lang = document.getElementById('projectLang').value;
-        const link = document.getElementById('projectLink').value.trim();
-        
-        if (!title || !description) {
-            alert('⚠️ Please fill in both Title and Description!');
+        if (!isAdmin) {
+            alert("Access denied. Admin mode required.");
             return;
         }
         
-        projects.push({
-            title: title,
-            description: description,
-            lang: lang,
-            link: link
-        });
+        const title = document.getElementById('projectTitle').value.trim();
+        const desc = document.getElementById('projectDesc').value.trim();
+        const lang = document.getElementById('projectLang').value;
+        const link = document.getElementById('projectLink').value.trim();
         
+        if (!title || !desc) { alert('✨ Please fill in both Title and Description!'); return; }
+        
+        projects.push({ title, description: desc, lang, link });
         saveProjects();
         displayProjects();
         
         document.getElementById('projectTitle').value = '';
         document.getElementById('projectDesc').value = '';
         document.getElementById('projectLink').value = '';
-        
-        alert('✅ Project added successfully! 🎉');
+        alert('✅ Project added successfully! ✨');
     }
     
     function deleteProject(index) {
-        if (confirm('Are you sure you want to delete this project?')) {
+        if (!isAdmin) {
+            alert("Access denied. Admin mode required.");
+            return;
+        }
+        
+        if (confirm('Delete this project?')) {
             projects.splice(index, 1);
             saveProjects();
             displayProjects();
         }
     }
+
+    function createParticles() {
+        const container = document.getElementById('particles');
+        for (let i = 0; i < 60; i++) {
+            const p = document.createElement('div');
+            p.classList.add('particle');
+            const size = Math.random() * 6 + 1;
+            p.style.width = size + 'px';
+            p.style.height = size + 'px';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDelay = Math.random() * 15 + 's';
+            p.style.animationDuration = Math.random() * 12 + 8 + 's';
+            container.appendChild(p);
+        }
+    }
     
     createParticles();
+    checkAdminMode();
     displayProjects();
 </script>
 
